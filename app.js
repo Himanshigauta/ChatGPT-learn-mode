@@ -1463,6 +1463,35 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+  // --- MOBILE DRAWER EVENT BINDINGS ---
+  const mobileMenuToggleBtn = document.getElementById('mobile-menu-toggle-btn');
+  const mobileSidebarOverlay = document.getElementById('mobile-sidebar-overlay-btn');
+  const sidebarEl = document.querySelector('.sidebar');
+
+  function openMobileDrawer() {
+    if (sidebarEl) sidebarEl.classList.add('open');
+    if (mobileSidebarOverlay) mobileSidebarOverlay.style.display = 'block';
+  }
+
+  function closeMobileDrawer() {
+    if (sidebarEl) sidebarEl.classList.remove('open');
+    if (mobileSidebarOverlay) mobileSidebarOverlay.style.display = 'none';
+  }
+
+  if (mobileMenuToggleBtn) {
+    mobileMenuToggleBtn.addEventListener('click', openMobileDrawer);
+  }
+
+  if (mobileSidebarOverlay) {
+    mobileSidebarOverlay.addEventListener('click', closeMobileDrawer);
+  }
+
+  // Dismiss drawer on clicking sidebar elements in mobile
+  const sidebarTaps = document.querySelectorAll('.nav-tab, .history-item, .sample-question-item, .new-chat-btn');
+  sidebarTaps.forEach(item => {
+    item.addEventListener('click', closeMobileDrawer);
+  });
+
   // --- INITIALIZE ---
   loadPersistedState();
   updateSidebarStateUI();

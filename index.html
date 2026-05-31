@@ -140,12 +140,20 @@
         </div>
       </div>
     </aside>
+    <div class="mobile-sidebar-overlay" id="mobile-sidebar-overlay-btn" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(2px); z-index: 140;"></div>
 
     <!-- Main Content Area -->
     <main class="main-content">
       <!-- Header -->
       <header class="app-header">
         <div class="header-left">
+          <button class="mobile-menu-toggle" id="mobile-menu-toggle-btn" aria-label="Toggle menu" style="display: none; background: transparent; border: none; color: var(--text-primary); cursor: pointer; padding: 4px; margin-right: 8px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
           <div class="model-selector">
             <span>ChatGPT 4o</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
