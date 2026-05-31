@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT - Learn Mode Feature Prototype</title>
+  <!-- Google Fonts for Outfit and Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+  <div class="app-container">
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <button class="new-chat-btn" id="new-chat-sidebar-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          New chat
+        </button>
+      </div>
+
+      <!-- Conversations List -->
+      <div class="nav-section chat-history">
+        <span class="section-title">Recent Chats</span>
+        <ul class="history-list">
+          <li class="history-item active" data-chat-trigger="coffee">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span class="chat-title">Is Coffee Healthy?</span>
+          </li>
+          <li class="history-item" data-chat-trigger="carrot">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span class="chat-title">Carrot Night Vision Myth</span>
+          </li>
+          <li class="history-item" data-chat-trigger="photosynthesis">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span class="chat-title">Photosynthesis Speed</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Navigation tabs (Chat, Learn Mode, Personal Dashboard) -->
+      <div class="nav-section main-nav">
+        <span class="section-title">Learn Mode Features</span>
+        <ul class="nav-list">
+          <li class="nav-tab active" data-tab="chat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>ChatGPT Chat</span>
+          </li>
+          <li class="nav-tab" data-tab="learn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+            </svg>
+            <span>Practice Learn Mode</span>
+            <span class="badge-new">New</span>
+          </li>
+          <li class="nav-tab" data-tab="dashboard">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="9" y1="3" x2="9" y2="21"></line>
+              <line x1="15" y1="3" x2="15" y2="21"></line>
+              <line x1="3" y1="9" x2="21" y2="9"></line>
+              <line x1="3" y1="15" x2="21" y2="15"></line>
+            </svg>
+            <span>Trust Profile</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Sidebar Footer / Profile -->
+      <div class="sidebar-footer">
+        <div class="user-widget">
+          <div class="user-avatar">H</div>
+          <div class="user-info">
+            <span class="user-name">Himanshi</span>
+            <span class="user-role">Level 2 Apprentice</span>
+          </div>
+        </div>
+        <div class="points-tracker">
+          <span class="points-value">350 XP</span>
+          <span class="streak-value">🔥 4 Days</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="header-left">
+          <div class="model-selector">
+            <span>ChatGPT 4o</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="badge-learn-enabled">
+            <span class="pulse-dot"></span>
+            <span>Learn Mode Enabled</span>
+          </div>
+        </div>
+        <div class="header-right">
+          <!-- Quick Status Widget -->
+          <div class="trust-summary-pill" id="header-trust-pill">
+            <span>Trust Score: 84%</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- View Containers -->
+      <div class="view-wrapper">
+        
+        <!-- Tab 1: Chat View -->
+        <section id="chat-view" class="tab-content active">
+          <div class="chat-thread" id="chat-thread-container">
+            
+            <!-- ChatGPT Greeting Bubble -->
+            <div class="message system-message">
+              <div class="message-avatar">AI</div>
+              <div class="message-body">
+                <p>Hello! How can I help you today?</p>
+                <div class="system-intro-card">
+                  <h4>💡 Confidence Scoring Engine Active</h4>
+                  <p>I will grade my confidence on sentences in my replies using an ML scoring layer:</p>
+                  <ul>
+                    <li>Standard white text indicates high confidence (no highlight needed).</li>
+                    <li><span class="sample-underline yellow">Yellow dashed underlines</span> indicate medium confidence (50%-85%).</li>
+                    <li><span class="sample-underline red">Red dashed underlines</span> indicate low confidence (&lt;50%).</li>
+                  </ul>
+                  <p>Click on any highlighted sentence to reveal the <strong>"Why Am I Seeing This?" Tooltip</strong>, which displays the actual confidence score and a brief explanation.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Chat Input Area -->
+          <footer class="chat-input-area">
+            <div class="input-container">
+              <button class="attachment-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
+                </svg>
+              </button>
+              <textarea placeholder="Message ChatGPT... (Try asking: 'Is coffee healthy?' or 'Do carrots improve night vision?')" id="chat-input-field"></textarea>
+              <button class="send-btn" id="send-message-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="19" x2="12" y2="5"></line>
+                  <polyline points="5 12 12 5 19 12"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="input-footnote">
+              ChatGPT Learn Mode prototype. Clicking sentences triggers deep trust analysis.
+            </div>
+          </footer>
+        </section>
+
+        <!-- Tab 2: Learn Mode View -->
+        <section id="learn-view" class="tab-content">
+          <div class="view-header">
+            <h1 class="view-title">Learn Mode: AI Claim Practice</h1>
+            <p class="view-subtitle">Train your critical thinking. Review AI-generated statements, identify hallucinations, and verify sources to build your skills.</p>
+          </div>
+          
+          <div class="learn-placeholder-container">
+            <div class="placeholder-icon">🎓</div>
+            <h3>Claim Practice Center</h3>
+            <p>Phase 5 will bring this full-featured quiz deck online. You will practice categorizing AI claims and spot suspicious data in real-time.</p>
+            <div class="mock-card-preview">
+              <div class="card-tag">Topic: Nutrition</div>
+              <p class="card-claim">"Organic sugar contains a special enzyme that prevents the body from storing it as fat."</p>
+              <div class="preview-actions">
+                <button class="btn-preview secondary">Trustworthy</button>
+                <button class="btn-preview secondary">Questionable</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab 3: Dashboard View -->
+        <section id="dashboard-view" class="tab-content">
+          <div class="view-header">
+            <h1 class="view-title">Personal Trust Profile</h1>
+            <p class="view-subtitle">Monitor your trust score, accuracy rate, learning topics, and verification history.</p>
+          </div>
+
+          <div class="dashboard-placeholder-container">
+            <div class="placeholder-icon">📊</div>
+            <h3>Fidelity Metrics & History</h3>
+            <p>Phase 4 will activate this dynamic dashboard. You will see real-time verification graphs, accuracy metrics, and your detailed claim verification history ledger.</p>
+            <div class="mock-metrics-row">
+              <div class="metric-box">
+                <span class="box-label">Claims Verified</span>
+                <span class="box-number">14</span>
+              </div>
+              <div class="metric-box">
+                <span class="box-label">Accuracy Rate</span>
+                <span class="box-number">92%</span>
+              </div>
+              <div class="metric-box">
+                <span class="box-label">Current Streak</span>
+                <span class="box-number">🔥 4 Days</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- "Why Am I Seeing This?" Tooltip -->
+  <div class="explain-tooltip" id="explain-tooltip-container">
+    <div class="tooltip-header">
+      <span class="tooltip-badge yellow" id="tooltip-severity-badge">Medium Confidence</span>
+      <span class="tooltip-score" id="tooltip-score-val">72%</span>
+    </div>
+    <p class="tooltip-explanation" id="tooltip-explanation-text">
+      This claim is marked Medium Confidence because current evidence is incomplete or sources disagree.
+    </p>
+    <div class="tooltip-footer">
+      <button class="btn-tooltip-verify" id="tooltip-verify-trigger-btn">Verify Claim</button>
+      <button class="btn-tooltip-close" id="tooltip-close-btn">Dismiss</button>
+    </div>
+    <div class="tooltip-arrow"></div>
+  </div>
+
+  <!-- Notification Banner -->
+  <div class="points-notification" id="points-notification-banner">
+    <div class="notification-content">
+      <span class="notification-points">+50 Trust Points!</span>
+      <span class="notification-detail">Claim successfully verified.</span>
+    </div>
+  </div>
+
+  <!-- Backdrop -->
+  <div class="drawer-overlay" id="drawer-backdrop"></div>
+
+  <!-- Scripts -->
+  <script src="mock_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

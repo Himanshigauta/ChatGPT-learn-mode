@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT - Learn Mode & Verification</title>
+  <!-- Google Fonts for Outfit and Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+  <div class="app-container">
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-area">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" class="shield-logo">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <span class="logo-text">ChatGPT Learn</span>
+        </div>
+        <button class="new-chat-btn" id="new-chat-sidebar-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          New chat
+        </button>
+      </div>
+
+      <!-- Conversations List -->
+      <div class="nav-section chat-history">
+        <span class="section-title">Recent Chats</span>
+        <ul class="history-list">
+          <li class="history-item" data-chat-trigger="coffee">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span class="chat-title">Is Coffee Healthy?</span>
+          </li>
+          <li class="history-item" data-chat-trigger="carrot">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span class="chat-title">Carrot Night Vision Myth</span>
+          </li>
+          <li class="history-item" data-chat-trigger="photosynthesis">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span class="chat-title">Photosynthesis Biology</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Sample Questions Section -->
+      <div class="nav-section chat-history" style="flex-grow: 0; margin-bottom: 16px; border-top: 1px solid var(--border-color); padding-top: 16px;">
+        <span class="section-title">Demo Sample Questions</span>
+        <ul class="sample-questions-list">
+          <li class="sample-question-item" data-prompt="Can humans survive on Mars?">
+            <span style="font-size:16px;">🚀</span>
+            <span class="sample-title">Can humans survive on Mars?</span>
+          </li>
+          <li class="sample-question-item" data-prompt="Is coffee good for your health?">
+            <span style="font-size:16px;">☕</span>
+            <span class="sample-title">Is coffee good for your health?</span>
+          </li>
+          <li class="sample-question-item" data-prompt="Does climate change affect sea levels?">
+            <span style="font-size:16px;">🌊</span>
+            <span class="sample-title">Does climate change affect sea levels?</span>
+          </li>
+          <li class="sample-question-item" data-prompt="How does ChatGPT work?">
+            <span style="font-size:16px;">🤖</span>
+            <span class="sample-title">How does ChatGPT work?</span>
+          </li>
+          <li class="sample-question-item" data-prompt="What causes inflation?">
+            <span style="font-size:16px;">📈</span>
+            <span class="sample-title">What causes inflation?</span>
+          </li>
+          <li class="sample-question-item" data-prompt="Should students use AI for learning?">
+            <span style="font-size:16px;">🎓</span>
+            <span class="sample-title">Should students use AI for learning?</span>
+          </li>
+          <li class="sample-question-item" data-prompt="Is remote work more productive than office work?">
+            <span style="font-size:16px;">🏠</span>
+            <span class="sample-title">Is remote work more productive?</span>
+          </li>
+          <li class="sample-question-item" data-prompt="What are the benefits and risks of electric vehicles?">
+            <span style="font-size:16px;">⚡</span>
+            <span class="sample-title">Benefits & risks of EVs</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Navigation tabs (Chat, Learn Mode, Personal Dashboard) -->
+      <div class="nav-section main-nav">
+        <span class="section-title">Educational Hub</span>
+        <ul class="nav-list">
+          <li class="nav-tab active" data-tab="chat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>ChatGPT Chat</span>
+          </li>
+          <li class="nav-tab" data-tab="learn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+            </svg>
+            <span>Learn Mode Hub</span>
+            <span class="badge-new">New</span>
+          </li>
+          <li class="nav-tab" data-tab="dashboard">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="9" y1="3" x2="9" y2="21"></line>
+              <line x1="15" y1="3" x2="15" y2="21"></line>
+              <line x1="3" y1="9" x2="21" y2="9"></line>
+              <line x1="3" y1="15" x2="21" y2="15"></line>
+            </svg>
+            <span>Personal Dashboard</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Sidebar Footer / Profile -->
+      <div class="sidebar-footer">
+        <div class="user-widget">
+          <div class="user-avatar">H</div>
+          <div class="user-info">
+            <span class="user-name">Himanshi</span>
+            <span class="user-role" id="sidebar-user-role">Level 2 Apprentice</span>
+          </div>
+        </div>
+        <div class="points-tracker">
+          <span class="points-value" id="sidebar-points-val">350 XP</span>
+          <span class="streak-value" id="sidebar-streak-val">🔥 4 Days</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="header-left">
+          <div class="model-selector">
+            <span>ChatGPT 4o</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="badge-learn-enabled">
+            <span class="pulse-dot"></span>
+            <span>Verification Active</span>
+          </div>
+        </div>
+        <div class="header-right">
+          <!-- Quick Status Widget -->
+          <div class="trust-summary-pill" id="header-trust-pill">
+            <span>Trust Score: 84%</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- View Wrapper -->
+      <div class="view-wrapper">
+        
+        <!-- Tab 1: Chat View -->
+        <section id="chat-view" class="tab-content active">
+          
+          <!-- Default Empty Landing Screen -->
+          <div class="chat-home-wrapper" id="chat-home-view">
+            <div class="chat-home-container">
+              <div class="chat-logo-ring">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <h1 class="chat-home-title">How can I help you today?</h1>
+              <p class="chat-home-subtitle">Learn Mode is active. Submit any question. ChatGPT will highlight key claims, and you should verify them to evaluate confidence levels and practice critical thinking skills.</p>
+              
+              <!-- Help Prompt Cards Grid -->
+              <div class="chat-home-grid">
+                <div class="chat-prompt-card" data-prompt="Is coffee healthy?">
+                  <span class="prompt-icon">☕</span>
+                  <div class="prompt-details">
+                    <h5>Evaluate Coffee Nutrition</h5>
+                    <p>Analyze diabetes reduction claims and metabolic rate statistics.</p>
+                  </div>
+                </div>
+                <div class="chat-prompt-card" data-prompt="Do carrots improve night vision?">
+                  <span class="prompt-icon">🥕</span>
+                  <div class="prompt-details">
+                    <h5>Fact-Check Vision Myths</h5>
+                    <p>Examine World War II pilot claims and source credibility indicators.</p>
+                  </div>
+                </div>
+                <div class="chat-prompt-card" data-prompt="How does photosynthesis work?">
+                  <span class="prompt-icon">🍃</span>
+                  <div class="prompt-details">
+                    <h5>Analyze Photosynthesis speed</h5>
+                    <p>Evaluate desert cacti biological survival systems under drought.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Message Thread -->
+          <div class="chat-thread" id="chat-thread-container" style="display: none;">
+            <!-- Will dynamically populate user prompts and AI responses -->
+          </div>
+
+          <!-- Chat Input Area -->
+          <footer class="chat-input-area">
+            <div class="input-container">
+              <button class="attachment-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
+                </svg>
+              </button>
+              <textarea placeholder="Ask ChatGPT anything... (Confidence classification runs dynamically)" id="chat-input-field"></textarea>
+              <button class="send-btn" id="send-message-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="19" x2="12" y2="5"></line>
+                  <polyline points="5 12 12 5 19 12"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="input-footnote">
+              ChatGPT can make mistakes. Verify important info.
+            </div>
+          </footer>
+        </section>
+
+        <!-- Tab 2: Redesigned Learn Mode View -->
+        <section id="learn-view" class="tab-content">
+          <div class="view-header">
+            <h1 class="view-title">Learn Mode Hub</h1>
+            <p class="view-subtitle">Master the art of critical thinking and information evaluation with hands-on practice.</p>
+          </div>
+          
+          <div class="learn-hub-wrapper">
+            <!-- Learning Center Internal Navigation -->
+            <div class="learn-tabs">
+              <button class="learn-tab-btn active" data-module="flags">🚩 Spot Red Flags</button>
+              <button class="learn-tab-btn" data-module="sources">🔍 Source Evaluation</button>
+              <button class="learn-tab-btn" data-module="signals">💡 Confidence Signals</button>
+              <button class="learn-tab-btn" data-module="exercises">✏️ Verification Framework</button>
+            </div>
+
+            <!-- Learning Module Card Content Bodies -->
+            <div class="learn-module-content">
+              
+              <!-- Module 1: Spot the Red Flags -->
+              <div class="module-body active" id="module-flags-view">
+                <h3>Spotting Information Red Flags</h3>
+                <p class="module-intro">AI models are trained on massive datasets that occasionally contain rumors, outdated articles, or marketing copy. Learn to spot these telltale warning flags:</p>
+                
+                <div class="red-flags-grid">
+                  <div class="flag-card">
+                    <span class="flag-icon">⛔</span>
+                    <h5>Missing Citations</h5>
+                    <p>Claims that assert dramatic statistics or medical results without linking to standard journals or peer-reviewed citations. If there's no primary domain, treat it as questionable.</p>
+                  </div>
+                  <div class="flag-card">
+                    <span class="flag-icon">📣</span>
+                    <h5>Sensational Statements</h5>
+                    <p>Language asserting absolute parameters, such as "guarantees", "double in 24 hours", or "flawless results". Real science and consensus are carefully bounded by parameters, not absolutes.</p>
+                  </div>
+                  <div class="flag-card">
+                    <span class="flag-icon">📅</span>
+                    <h5>Outdated Information</h5>
+                    <p>Claims presenting scientific data from decades ago without integrating newer replication tests or modern meta-analyses. What was accepted in 1980 is often highly qualified today.</p>
+                  </div>
+                  <div class="flag-card">
+                    <span class="flag-icon">⚡</span>
+                    <h5>Contradictory Evidence</h5>
+                    <p>Statements presenting one isolated outcome while completely omitting the broader scientific consensus that proves the opposite. Always check if other standard authorities agree.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Module 2: Source Evaluation -->
+              <div class="module-body" id="module-sources-view">
+                <h3>How to Evaluate Source Integrity</h3>
+                <p class="module-intro">Not all sources carry equal weight. When verifying any information, run it through this evaluation checklist to judge its authority:</p>
+                
+                <div class="evaluation-checklists-container">
+                  <div class="eval-column">
+                    <h4>1. Professional Authority</h4>
+                    <ul>
+                      <li><strong>Institutional Standing</strong>: Is the source a respected university, government science bureau (.gov), or recognized NGO (.org)?</li>
+                      <li><strong>Sponsor Bias</strong>: Is the source funded by commercial entities selling a product related to the claim? (e.g. fat-burner companies funding caffeine surveys).</li>
+                    </ul>
+                  </div>
+                  <div class="eval-column">
+                    <h4>2. Academic Consensus</h4>
+                    <ul>
+                      <li><strong>Peer Review</strong>: Has the study been published in established scientific journals (like Nature, Lancet, or PubMed indexes)?</li>
+                      <li><strong>Meta-Analyses</strong>: Does the claim represent a broad review of multiple clinical trials, or is it an isolated lab anomaly in yeast cells?</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Module 3: Confidence Signals -->
+              <div class="module-body" id="module-signals-view">
+                <h3>Understanding AI Confidence Metrics</h3>
+                <p class="module-intro">ChatGPT automatically analyzes claims and assigns numerical confidence scores in Learn Mode. Here is what those metrics mean and why they fluctuate:</p>
+                
+                <div class="signals-explanation-deck">
+                  <div class="signal-expl-row high">
+                    <span class="expl-pill">90% - 100%</span>
+                    <div class="expl-details">
+                      <h5>High Confidence</h5>
+                      <p>Established scientific laws, broad historical consensus, or cross-referenced, highly verified factual statements. Represents maximum accuracy boundaries.</p>
+                    </div>
+                  </div>
+                  <div class="signal-expl-row medium">
+                    <span class="expl-pill">50% - 85%</span>
+                    <div class="expl-details">
+                      <h5>Medium Confidence</h5>
+                      <p>Subject matters containing active academic debates, correlation-based statistics, or lacking direct causation clinical evidence in human models.</p>
+                    </div>
+                  </div>
+                  <div class="signal-expl-row low">
+                    <span class="expl-pill">&lt; 50%</span>
+                    <div class="expl-details">
+                      <h5>Low Confidence</h5>
+                      <p>Sensational marketing assertions, military propaganda campaigns, historical myths, or extreme biological extrapolations unsupported by clinical trials.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Module 4: Step-by-Step Verification Framework & Guided Examples -->
+              <div class="module-body" id="module-exercises-view">
+                <div class="framework-container">
+                  <div class="framework-sidebar">
+                    <h4>Interactive Examples</h4>
+                    <p class="sidebar-help">Select a guided scenario to practice the Verification Framework:</p>
+                    <div class="scenario-buttons" id="scenario-selector-list">
+                      <!-- Scenarios populated dynamically -->
+                    </div>
+                  </div>
+
+                  <div class="framework-workspace">
+                    <div class="workspace-header">
+                      <h3 id="framework-scenario-title">Guided Claim Verification</h3>
+                      <div class="step-progress-wrapper">
+                        <div class="step-dots">
+                          <span class="step-dot active" data-step="1">1</span>
+                          <span class="step-dot" data-step="2">2</span>
+                          <span class="step-dot" data-step="3">3</span>
+                          <span class="step-dot" data-step="4">4</span>
+                          <span class="step-dot" data-step="5">5</span>
+                        </div>
+                        <span class="step-text-indicator" id="framework-step-indicator">Step 1: What Type of Claim Is This?</span>
+                      </div>
+                    </div>
+
+                    <div class="workspace-claim-card">
+                      <span class="workspace-topic-tag" id="framework-scenario-topic">Topic: Space Colonization</span>
+                      <p class="workspace-claim-text" id="framework-scenario-claim">"Building self-sustaining cities on Mars is scientifically viable with existing technology by 2030."</p>
+                    </div>
+
+                    <!-- Step Panels -->
+                    <div class="step-panels-container">
+                      <!-- Step 1 Panel -->
+                      <div class="step-panel active" id="step-panel-1">
+                        <h4>Step 1: Classify Claim Type</h4>
+                        <p>Identifying the category helps you know what level of proof is required. Is it an objective Fact, a subjective Opinion, a speculative Prediction, or a broad Generalization?</p>
+                        <div class="step-options-grid">
+                          <button class="btn-step-option" data-option="Fact">Fact</button>
+                          <button class="btn-step-option" data-option="Opinion">Opinion</button>
+                          <button class="btn-step-option" data-option="Prediction">Prediction</button>
+                          <button class="btn-step-option" data-option="Generalization">Generalization</button>
+                        </div>
+                        <div class="step-feedback-box" id="step-feedback-1" style="display: none;"></div>
+                      </div>
+
+                      <!-- Step 2 Panel -->
+                      <div class="step-panel" id="step-panel-2">
+                        <h4>Step 2: Evaluate Who is Making the Claim</h4>
+                        <p>Analyze the author or source reputation, expertise, and potential commercial or political biases. Let's look at the source for this scenario:</p>
+                        <div class="source-info-card" id="framework-source-info">
+                          <!-- Populated dynamically -->
+                        </div>
+                        <div class="step-options-grid">
+                          <button class="btn-step-option" data-option="highly_credible">Highly Credible & Peer-Reviewed</button>
+                          <button class="btn-step-option" data-option="biased_speculative">Biased, Commercial or Speculative</button>
+                        </div>
+                        <div class="step-feedback-box" id="step-feedback-2" style="display: none;"></div>
+                      </div>
+
+                      <!-- Step 3 Panel -->
+                      <div class="step-panel" id="step-panel-3">
+                        <h4>Step 3: Analyze Supporting Evidence</h4>
+                        <p>Look for direct research data, consensus reports, and valid citations. Look at the primary evidence uncovered for this claim:</p>
+                        <div class="evidence-info-card" id="framework-evidence-info">
+                          <!-- Populated dynamically -->
+                        </div>
+                        <div class="step-options-grid">
+                          <button class="btn-step-option" data-option="strong">Strong, Replicated Empirical Evidence</button>
+                          <button class="btn-step-option" data-option="weak">Weak, Outdated, or Correlation-Only</button>
+                        </div>
+                        <div class="step-feedback-box" id="step-feedback-3" style="display: none;"></div>
+                      </div>
+
+                      <!-- Step 4 Panel -->
+                      <div class="step-panel" id="step-panel-4">
+                        <h4>Step 4: Cross-Verify with Independent Sources</h4>
+                        <p>Compare the statement with broader scientific consensus and other reputable organizations. How do third-party experts rate this?</p>
+                        <div class="cross-verification-card" id="framework-cross-info">
+                          <!-- Populated dynamically -->
+                        </div>
+                        <div class="step-options-grid">
+                          <button class="btn-step-option" data-option="agree">Strong Expert Consensus Agreement</button>
+                          <button class="btn-step-option" data-option="contradict">Expert Skepticism / Contradictory Evidence</button>
+                        </div>
+                        <div class="step-feedback-box" id="step-feedback-4" style="display: none;"></div>
+                      </div>
+
+                      <!-- Step 5 Panel -->
+                      <div class="step-panel" id="step-panel-5">
+                        <h4>Step 5: Final Assessment</h4>
+                        <p>Based on your complete analysis across all steps, evaluate this claim. Does the supporting evidence fully justify the claim, or does it require more proof?</p>
+                        <div class="framework-final-buttons">
+                          <button class="btn-framework-final approve" id="btn-framework-evidence-ok">✅ Evidence Makes Sense</button>
+                          <button class="btn-framework-final reject" id="btn-framework-needs-more">⚠️ Needs More Evidence</button>
+                        </div>
+                        <div class="step-feedback-box" id="step-feedback-5" style="display: none;"></div>
+                      </div>
+                    </div>
+
+                    <!-- Navigation Footer -->
+                    <div class="workspace-navigation">
+                      <button class="btn-framework-nav" id="btn-framework-prev" disabled>Back</button>
+                      <button class="btn-framework-nav" id="btn-framework-next" disabled>Next Step</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab 3: Redesigned Dashboard View -->
+        <section id="dashboard-view" class="tab-content">
+          <div class="view-header">
+            <h1 class="view-title">Personal Trust & Learning Center</h1>
+            <p class="view-subtitle">Review your verified metrics, chronological timeline, common mistakes, and unlocked credentials.</p>
+          </div>
+
+          <div class="dashboard-redesign-container">
+            
+            <!-- SECTION 1: TRUST OVERVIEW -->
+            <div class="dashboard-section section-overview">
+              <h3 class="section-heading">Trust Overview</h3>
+              <div class="overview-grid">
+                
+                <!-- Trust Score Dial Card -->
+                <div class="dash-card-premium score-dial-card">
+                  <h4 class="dash-card-title">Fidelity Profile</h4>
+                  <div class="dial-container">
+                    <svg width="120" height="120" viewBox="0 0 140 140" class="dial-svg">
+                      <circle cx="70" cy="70" r="55" class="dial-bg"></circle>
+                      <circle cx="70" cy="70" r="55" class="dial-progress" id="dial-progress-circle" style="stroke-dashoffset: 57.73;"></circle>
+                    </svg>
+                    <div class="dial-labels">
+                      <span class="dial-percentage-num" id="dash-trust-score-num">84%</span>
+                      <span class="dial-label-title">Trust Score</span>
+                    </div>
+                  </div>
+                  <div class="level-xp-container">
+                    <div class="level-badge" id="dash-level-badge">Lvl 2</div>
+                    <div class="xp-bar-wrapper">
+                      <div class="xp-bar-fill" id="dash-xp-bar" style="width: 70%;"></div>
+                      <span class="xp-bar-text" id="dash-xp-text">350 / 500 XP</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Streak Card -->
+                <div class="dash-card-premium stat-overview-card streak-card">
+                  <span class="card-large-icon">🔥</span>
+                  <div class="card-details">
+                    <span class="card-num" id="dash-streak-num">4 Days</span>
+                    <span class="card-label">Verification Streak</span>
+                  </div>
+                  <div class="streak-mini-progress">
+                    <span class="day-dot active">M</span>
+                    <span class="day-dot active">T</span>
+                    <span class="day-dot active">W</span>
+                    <span class="day-dot active">T</span>
+                    <span class="day-dot">F</span>
+                    <span class="day-dot">S</span>
+                    <span class="day-dot">S</span>
+                  </div>
+                </div>
+
+                <!-- Learning Progress Card -->
+                <div class="dash-card-premium stat-overview-card progress-card">
+                  <span class="card-large-icon">🎓</span>
+                  <div class="card-details">
+                    <span class="card-num" id="dash-progress-pct">70%</span>
+                    <span class="card-label">Learning Progress</span>
+                  </div>
+                  <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="dash-learning-bar-fill" style="width: 70%;"></div>
+                  </div>
+                </div>
+
+                <!-- Claims Reviewed Card -->
+                <div class="dash-card-premium stat-overview-card reviewed-card">
+                  <span class="card-large-icon">👁️</span>
+                  <div class="card-details">
+                    <span class="card-num" id="dash-reviewed-count">18</span>
+                    <span class="card-label">Claims Reviewed</span>
+                  </div>
+                  <p class="card-footnote">Total claims inspected across Chat & Learn Modes.</p>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- SECTION 2: VERIFICATION ACTIVITY -->
+            <div class="dashboard-section section-activity">
+              <h3 class="section-heading">Verification Activity</h3>
+              <div class="activity-grid">
+                
+                <div class="activity-stats">
+                  <div class="dash-card-premium metric-square">
+                    <span class="square-icon">✅</span>
+                    <div class="square-details">
+                      <span class="square-num" id="dash-verified-count">14</span>
+                      <span class="square-label">Claims Verified</span>
+                    </div>
+                  </div>
+                  <div class="dash-card-premium metric-square">
+                    <span class="square-icon">⚠️</span>
+                    <div class="square-details">
+                      <span class="square-num" id="dash-questioned-count">4</span>
+                      <span class="square-label">Claims Questioned</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Timeline of Recent Activity -->
+                <div class="dash-card-premium activity-timeline-card">
+                  <h4 class="dash-card-title">Recent Activity Timeline</h4>
+                  <div class="activity-timeline" id="dash-activity-timeline">
+                    <!-- Loaded dynamically -->
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- SECTION 3: LEARNING INSIGHTS -->
+            <div class="dashboard-section section-insights">
+              <h3 class="section-heading">Learning Insights</h3>
+              <div class="insights-grid">
+
+                <!-- Most Questioned Claims Card -->
+                <div class="dash-card-premium questioned-claims-card">
+                  <h4 class="dash-card-title">Most Questioned Claims</h4>
+                  <div class="ledger-table-wrapper">
+                    <table class="ledger-table">
+                      <thead>
+                        <tr>
+                          <th>Evaluated Claim Statement</th>
+                          <th style="width: 120px; text-align: center;">Times Flagged</th>
+                          <th style="width: 150px; text-align: center;">Trust Status</th>
+                        </tr>
+                      </thead>
+                      <tbody id="dash-questioned-claims-body">
+                        <!-- Populated dynamically -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- Topic Coverage and Mistakes -->
+                <div class="insights-details-column">
+                  
+                  <!-- Topics Explored -->
+                  <div class="dash-card-premium topics-card">
+                    <h4 class="dash-card-title">Topics Explored</h4>
+                    <div class="topics-list-container" id="dash-topics-list">
+                      <!-- Dynamic topic rows -->
+                    </div>
+                  </div>
+
+                  <!-- Most Common Mistakes -->
+                  <div class="dash-card-premium mistakes-card">
+                    <h4 class="dash-card-title">Most Common Mistakes</h4>
+                    <div class="mistakes-list" id="dash-mistakes-list">
+                      <div class="mistake-item">
+                        <span class="mistake-badge">High Risk</span>
+                        <div class="mistake-info">
+                          <h5>Overlooking Sponsor Bias</h5>
+                          <p>Accepting research funded by commercial sponsors (e.g. coffee brands studies).</p>
+                        </div>
+                      </div>
+                      <div class="mistake-item">
+                        <span class="mistake-badge warning">Medium Risk</span>
+                        <div class="mistake-info">
+                          <h5>Accepting Speculative Timelines</h5>
+                          <p>Mistaking ambitious business or tech predictions as established scientific fact.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <!-- SECTION 4: ACHIEVEMENTS -->
+            <div class="dashboard-section section-achievements">
+              <h3 class="section-heading">Achievements</h3>
+              <div class="achievements-grid">
+                
+                <div class="dash-card-premium badges-card">
+                  <h4 class="dash-card-title">Credentials Cabinet</h4>
+                  <div class="badges-grid-container" id="dash-badges-grid">
+                    <!-- Badges render dynamically -->
+                  </div>
+                </div>
+
+                <!-- Milestones Cards -->
+                <div class="dash-card-premium milestones-card">
+                  <h4 class="dash-card-title">Learning & Verification Milestones</h4>
+                  <div class="milestones-list" id="dash-milestones-list">
+                    <div class="milestone-item achieved">
+                      <span class="milestone-icon">🌟</span>
+                      <div class="milestone-details">
+                        <h5>First Critical Step</h5>
+                        <p>Complete your first dynamic claim evaluation</p>
+                      </div>
+                    </div>
+                    <div class="milestone-item achieved">
+                      <span class="milestone-icon">🔥</span>
+                      <div class="milestone-details">
+                        <h5>Consistency Achieved</h5>
+                        <p>Maintain a 3-day verification streak</p>
+                      </div>
+                    </div>
+                    <div class="milestone-item">
+                      <span class="milestone-icon">🏆</span>
+                      <div class="milestone-details">
+                        <h5>Information Master</h5>
+                        <p>Achieve a 95% overall Trust Score (Locked)</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- History Table (Full Width) -->
+            <div class="dash-card-premium ledger-card full-width" style="margin-top: 24px;">
+              <h4 class="dash-card-title">AI Claim Verification Ledger</h4>
+              <div class="ledger-table-wrapper">
+                <table class="ledger-table">
+                  <thead>
+                    <tr>
+                      <th>Evaluated Claim Statement</th>
+                      <th>Topic</th>
+                      <th>Action Taken</th>
+                      <th>Fidelity Rating</th>
+                      <th>XP Gained</th>
+                      <th>Date Verified</th>
+                    </tr>
+                  </thead>
+                  <tbody id="dash-ledger-body">
+                    <!-- Dynamic rows populated by script -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- "Why Am I Seeing This?" Tooltip -->
+  <div class="explain-tooltip" id="explain-tooltip-container">
+    <div class="tooltip-header">
+      <span class="tooltip-badge yellow" id="tooltip-severity-badge">Medium Confidence</span>
+      <span class="tooltip-score" id="tooltip-score-val">72%</span>
+    </div>
+    <p class="tooltip-explanation" id="tooltip-explanation-text">
+      This claim is marked Medium Confidence because current evidence is incomplete or sources disagree.
+    </p>
+    <div class="tooltip-footer">
+      <button class="btn-tooltip-verify" id="tooltip-verify-trigger-btn">Verify Claim</button>
+      <button class="btn-tooltip-close" id="tooltip-close-btn">Dismiss</button>
+    </div>
+    <div class="tooltip-arrow"></div>
+  </div>
+
+  <!-- Educational Trust Transparency Drawer (Slide-out) -->
+  <div class="trust-drawer" id="trust-drawer-container">
+    <div class="drawer-header">
+      <div class="drawer-title-group">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="drawer-meta-topic" id="drawer-meta-topic">Topic: Nutrition</span>
+          <span class="reviewed-badge" id="drawer-reviewed-badge" style="display: none;">Reviewed</span>
+        </div>
+        <h3 class="drawer-title">Verification & Trust Analysis</h3>
+      </div>
+      <button class="btn-drawer-close" id="btn-drawer-close" aria-label="Close drawer">&times;</button>
+    </div>
+    
+    <div class="drawer-content">
+      <!-- Sentence Claim Box -->
+      <div class="drawer-card block-claim">
+        <h4 class="card-title">Evaluated Claim</h4>
+        <p class="evaluated-claim-text" id="drawer-claim-text">
+          "Caffeine consumption increases your basal metabolic rate by 20% to 30%, leading to rapid weight loss."
+        </p>
+      </div>
+      
+      <!-- Score & Status Indicators -->
+      <div class="drawer-stats-row">
+        <div class="drawer-stat-card">
+          <span class="stat-label">Confidence Score</span>
+          <div class="score-display-wrapper">
+            <span class="score-percentage-num" id="drawer-score-val">72%</span>
+            <div class="score-track">
+              <div class="score-bar" id="drawer-score-bar" style="width: 72%;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="drawer-stat-card">
+          <span class="stat-label">Verification Status</span>
+          <span class="status-pill pending" id="drawer-status-pill">Pending Verification</span>
+        </div>
+      </div>
+      
+      <!-- Why Confidence is Reduced Explainability Card -->
+      <div class="drawer-card">
+        <h4 class="card-title">Why Confidence is Reduced</h4>
+        <div class="reason-breakdown-list" id="drawer-reasons-list">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+      
+      <!-- Suggested Correction -->
+      <div class="drawer-card" id="drawer-correction-card" style="display: none;">
+        <h4 class="card-title">Suggested Correction</h4>
+        <p class="corrected-claim-text" id="drawer-correction-text" style="font-size: 13px; color: var(--text-primary); line-height: 1.5; font-style: italic; border-left: 2.5px solid var(--green-primary); padding-left: 10px;">
+          <!-- Populated dynamically -->
+        </p>
+      </div>
+
+      <!-- NEW: Educational Critical-Thinking Evaluation Guidance Checklists -->
+      <div class="drawer-card checklist-card">
+        <h4 class="card-title">💡 Critical thinking checklist</h4>
+        <p class="checklist-desc">Inspect this claim using these criteria to make your decision:</p>
+        <div class="guidance-checklist">
+          <label class="check-item">
+            <input type="checkbox" id="check-reputable">
+            <span><strong>Is the source reputable?</strong> (Check authority and biases)</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" id="check-recent">
+            <span><strong>Is the information recent?</strong> (Check dates and meta-analysis)</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" id="check-fact">
+            <span><strong>Is the claim fact, not opinion?</strong> (Check objective bounds)</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" id="check-consensus">
+            <span><strong>Do other sources agree?</strong> (Cross-verify consensus)</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" id="check-evidence">
+            <span><strong>Is there backing evidence?</strong> (Assess laboratory trials)</span>
+          </label>
+        </div>
+      </div>
+      
+      <!-- Educational Independent Evaluation Guide -->
+      <div class="drawer-card" id="drawer-guide-card">
+        <h4 class="card-title">💡 Independent Evaluation Steps</h4>
+        <p class="evaluation-guide-text" id="drawer-guide-text" style="font-size: 12.5px; color: var(--text-secondary); line-height: 1.6; border-left: 2.5px solid var(--yellow-primary); padding-left: 10px; font-style: normal; margin-top: 6px;">
+          <!-- Populated dynamically -->
+        </p>
+      </div>
+      
+      <!-- Verified Citation Details -->
+      <div class="drawer-card" id="drawer-citation-card">
+        <h4 class="card-title">Verified Primary Source</h4>
+        <div class="citation-source-group" style="display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px;">
+          <div class="citation-source-logo" style="font-size: 24px; background: rgba(255, 255, 255, 0.05); padding: 8px; border-radius: 8px; flex-shrink: 0;">📄</div>
+          <div class="citation-source-info" style="display: flex; flex-direction: column; gap: 2px;">
+            <span class="citation-source-title" id="drawer-source-title" style="font-size: 14px; font-weight: 600; color: var(--text-primary);">Source Title</span>
+            <span class="citation-source-org" id="drawer-source-org" style="font-size: 12px; color: var(--text-secondary);">Source Organization</span>
+            <span class="citation-source-date" id="drawer-source-date" style="font-size: 11px; color: var(--text-muted);">Publication Date</span>
+          </div>
+        </div>
+        <p class="citation-explanation-text" id="drawer-explanation-text">
+          Clinical trials show caffeine increases metabolic rates by only 3% to 11% in healthy subjects. Long term weight loss correlates to consistent dietary calorie deficits rather than caffeine habits.
+        </p>
+        <a href="#" target="_blank" class="btn-drawer-link" id="drawer-source-link" style="display: flex; align-items: center; justify-content: space-between; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); padding: 10px 14px; border-radius: 8px; font-size: 13px; font-weight: 500; color: var(--green-primary); text-decoration: none; transition: background 0.15s; margin-top: 10px;">
+          <span>Explore Source Website</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Action buttons -->
+    <div class="drawer-actions" id="drawer-actions-container" style="padding: 16px 20px; display: flex; gap: 10px; width: 100%;">
+      <button class="btn-drawer-action btn-verify" id="btn-drawer-evidence-ok" style="flex: 1; justify-content: center;">
+        ✅ Evidence Makes Sense
+      </button>
+      <button class="btn-drawer-action btn-unconvinced" id="btn-drawer-needs-more" style="flex: 1; justify-content: center;">
+        ⚠️ Needs More Evidence
+      </button>
+    </div>
+  </div>
+
+  <!-- Notification Banner -->
+  <div class="points-notification" id="points-notification-banner">
+    <div class="notification-content">
+      <span class="notification-points" id="points-notif-title">+50 Trust Points!</span>
+      <span class="notification-detail" id="points-notif-detail">Claim successfully verified.</span>
+    </div>
+  </div>
+
+  <!-- Backdrop -->
+  <div class="drawer-overlay" id="drawer-backdrop"></div>
+
+  <!-- Scripts -->
+  <script src="mock_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
