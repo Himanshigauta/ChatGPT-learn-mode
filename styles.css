@@ -3061,7 +3061,9 @@ body {
 @media (max-width: 768px) {
   .app-container {
     flex-direction: column;
-    overflow: hidden; /* Prevent parent scrolling */
+    height: auto !important;
+    min-height: 100vh;
+    overflow: visible !important; /* Allow natural page scrolling */
   }
 
   /* Header hamburger display */
@@ -3113,9 +3115,39 @@ body {
     gap: 4px !important;
   }
 
+  /* General pages scroll naturally */
   .main-content {
-    height: 100vh; /* Fill screen */
-    overflow-y: auto;
+    height: auto !important;
+    min-height: calc(100vh - 56px);
+    overflow: visible !important;
+  }
+
+  .tab-content {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* ONLY Chat view maintains fixed height viewport to anchor input capsule */
+  .tab-content#chat-view.active {
+    display: flex !important;
+    height: calc(100vh - 56px) !important;
+    overflow: hidden !important;
+    position: relative;
+  }
+
+  #chat-view .chat-thread {
+    overflow-y: auto !important;
+    flex-grow: 1;
+    padding-bottom: 90px; /* Spacing for the floating input capsule */
+  }
+
+  #chat-view .chat-input-area {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, transparent 0%, var(--bg-primary) 30%);
+    z-index: 10;
   }
 
   /* Dashboard mobile compatibility */
