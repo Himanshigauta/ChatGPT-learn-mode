@@ -38,8 +38,8 @@ st.markdown("""
         overflow: hidden !important;
     }
     
-    /* Force Streamlit iframe wrapper to be full screen */
-    .element-container, .stHtml, iframe {
+    /* Force ONLY the Streamlit iframe and its specific wrappers to be full screen */
+    .element-container:has(iframe), .stHtml:has(iframe), iframe {
         width: 100% !important;
         height: 100vh !important;
         min-height: 100vh !important;
