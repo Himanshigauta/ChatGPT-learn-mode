@@ -1167,7 +1167,7 @@ const verificationKnowledgeBase = [
     sourceTitle: "Origin of Heavy Elements in Star Mergers",
     sourceOrg: "Smithsonian Institution",
     sourceDate: "August 2019",
-    sourceLink: "https://www.cfa.harvard.edu/news/first-image-black-hole",
+    sourceLink: "https://www.cfa.harvard.edu/news/colliding-neutron-stars-produce-gold",
     explanation: "Heavy elements like gold are formed through rapid neutron capture (r-process) during high-energy cosmic events like neutron star mergers.",
     evaluationGuide: "To evaluate stellar nucleosynthesis: 1. Research r-process stellar models. 2. Review spectroscopic data from recent gravity wave mergers."
   },
