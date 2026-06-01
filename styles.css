@@ -3237,7 +3237,7 @@ body {
     flex-shrink: 0 !important;
     width: 100% !important;
     background: var(--bg-primary) !important;
-    padding: 12px 12px 20px !important;
+    padding: 12px 12px calc(12px + env(safe-area-inset-bottom)) !important;
     box-sizing: border-box !important;
     z-index: 10;
   }
@@ -3551,12 +3551,21 @@ body {
   }
 
   .chat-input-area {
-    padding: 12px 12px 20px !important;
+    padding: 12px 12px calc(12px + env(safe-area-inset-bottom)) !important;
   }
   
   .input-container {
-    padding: 8px 10px !important;
-    border-radius: 16px !important;
+    padding: 6px 10px !important;
+    border-radius: 20px !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    gap: 6px !important;
+  }
+
+  .input-container textarea {
+    font-size: 16px !important; /* Disables page auto-zoom & viewport shift glitches on iOS/Android focus */
+    padding: 6px 4px !important;
+    line-height: 1.4 !important;
   }
 
   /* Learn Hub mobile tweaks */

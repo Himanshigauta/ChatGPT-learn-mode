@@ -1456,6 +1456,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (chatInputField) {
+    if (window.innerWidth <= 768) {
+      chatInputField.placeholder = "Ask ChatGPT...";
+    }
     chatInputField.addEventListener('input', () => {
       chatInputField.style.height = '24px';
       chatInputField.style.height = `${Math.min(chatInputField.scrollHeight - 6, 180)}px`;
