@@ -3120,15 +3120,92 @@ body {
 
   /* Dashboard mobile compatibility */
   .dashboard-redesign-container {
-    padding: 16px 16px 40px;
-    gap: 20px;
+    padding: 12px 12px 32px !important;
+    gap: 16px !important;
   }
 
-  .overview-grid,
+  /* Compact 2-column grid for overview cards on mobile */
+  .overview-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
   .activity-grid,
   .insights-grid,
   .achievements-grid {
     grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Shrink overview cards and contents for mobile screens */
+  .dash-card-premium {
+    padding: 12px !important;
+    border-radius: 10px !important;
+  }
+
+  .score-dial-card {
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+
+  .dial-container {
+    width: 90px !important;
+    height: 90px !important;
+    margin: 4px 0 !important;
+  }
+
+  .dial-percentage-num {
+    font-size: 18px !important;
+  }
+
+  .dial-label-title {
+    font-size: 7px !important;
+  }
+
+  .level-xp-container {
+    margin-top: 4px !important;
+    gap: 6px !important;
+  }
+
+  .level-badge {
+    font-size: 9px !important;
+    padding: 2px 5px !important;
+  }
+
+  .xp-bar-text {
+    font-size: 8px !important;
+  }
+
+  .card-large-icon {
+    font-size: 20px !important;
+    padding: 6px !important;
+    border-radius: 8px !important;
+  }
+
+  .card-num {
+    font-size: 18px !important;
+  }
+
+  .card-label {
+    font-size: 10.5px !important;
+  }
+
+  .card-footnote {
+    font-size: 9.5px !important;
+    margin-top: 4px !important;
+  }
+
+  .day-dot {
+    width: 18px !important;
+    height: 18px !important;
+    font-size: 8px !important;
+    border-radius: 4px !important;
+  }
+
+  .streak-mini-progress {
+    gap: 4px !important;
+    margin-top: 6px !important;
   }
 
   /* Ensure tables scroll smoothly instead of breaking bounds */
