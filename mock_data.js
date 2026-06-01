@@ -935,7 +935,7 @@ const mockDatabase = {
           sourceTitle: "A Cultural History of Carrots and Retinol Chemistry",
           sourceOrg: "Smithsonian Institution",
           sourceDate: "August 2013",
-          sourceLink: "https://www.smithsonianmag.com/arts-culture/story-of-carrots-wont-help-you-see-in-the-dark-180986214/",
+          sourceLink: "https://www.smithsonianmag.com/arts-culture/a-wwii-propaganda-campaign-popularized-the-myth-that-carrots-help-you-see-in-the-dark-180894762/",
           explanation: "Beta-carotene is cleaved by biological enzymes in the liver to form retinal (Vitamin A), an essential micronutrient for human photoreceptors.",
           evaluationGuide: "Look up biochemical articles detailing carotenoid digestion and conversion ratios.",
           correctAction: "Confirm"
@@ -958,7 +958,7 @@ const mockDatabase = {
           sourceTitle: "How WWII Propaganda Gave Carrots Superpowers",
           sourceOrg: "Smithsonian Institution",
           sourceDate: "August 2013",
-          sourceLink: "https://www.smithsonianmag.com/arts-culture/story-of-carrots-wont-help-you-see-in-the-dark-180986214/",
+          sourceLink: "https://www.smithsonianmag.com/arts-culture/a-wwii-propaganda-campaign-popularized-the-myth-that-carrots-help-you-see-in-the-dark-180894762/",
           explanation: "Historical records confirm the RAF created the myth to deceive German intelligence. Normal consumption does not enhance vision beyond regular baseline limits.",
           evaluationGuide: "To fact-check historical warfare propaganda myths: 1. Research official declassified government archives (e.g. Imperial War Museum). 2. Align the myth's timeline with scientific radar technology declassification. 3. Search academic journals detailing deceptions.",
           correctAction: "Dispute"
