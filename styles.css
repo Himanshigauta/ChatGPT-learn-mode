@@ -3155,7 +3155,33 @@ body {
   .framework-sidebar {
     border-right: none;
     border-bottom: 1px solid var(--border-color);
-    padding: 16px;
+    padding: 12px 16px !important;
+  }
+
+  .scenario-buttons {
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    gap: 8px !important;
+    padding-bottom: 4px !important;
+    width: 100% !important;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scenario-buttons::-webkit-scrollbar {
+    display: none;
+  }
+
+  .btn-scenario-item {
+    display: inline-flex !important;
+    width: auto !important;
+    padding: 6px 12px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .scenario-btn-claim {
+    display: none !important; /* Hide long text on mobile to make buttons extremely compact */
   }
 
   .framework-workspace {
@@ -3175,6 +3201,31 @@ body {
   .btn-step-option {
     padding: 10px 14px;
     font-size: 13px;
+  }
+
+  /* Core font scale and message layout adjustments on mobile */
+  .message {
+    width: 95% !important;
+    gap: 10px !important;
+    font-size: 14px !important;
+  }
+
+  .message-avatar {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 11px !important;
+  }
+
+  .view-header {
+    padding: 16px 16px 0 !important;
+  }
+
+  .view-title {
+    font-size: 20px !important;
+  }
+
+  .view-subtitle {
+    font-size: 12.5px !important;
   }
 
   /* Premium Bottom Sheet Trust Drawer on Mobile */
