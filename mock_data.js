@@ -39,7 +39,7 @@ const mockDatabase = {
           sourceTitle: "Martian Soil Chemistry and Crop Suitability",
           sourceOrg: "California Institute of Technology",
           sourceDate: "March 2021",
-          sourceLink: "https://mars.nasa.gov/news/8936/nasas-perseverance-rover-oxygen-generating-device-moxie-completes-first-run-on-mars/",
+          sourceLink: "https://www.nasa.gov/press-release/nasa-s-perseverance-mars-rover-extracts-first-oxygen-from-red-planet",
           explanation: "Analysis of regolith samples from multiple landing sites confirms high concentrations (0.5% to 1.0%) of calcium and magnesium perchlorates, requiring deep biochemical washing.",
           evaluationGuide: "Examine JPL soil sample data from Perseverance or Phoenix lander reports on chlorine compound concentrations.",
           correctAction: "Dispute"
@@ -85,7 +85,7 @@ const mockDatabase = {
           sourceTitle: "Mars Exploration: Habitability and Human Survival Limits",
           sourceOrg: "NASA Planetary Science Division",
           sourceDate: "June 2023",
-          sourceLink: "https://mars.nasa.gov/news/8936/nasas-perseverance-rover-oxygen-generating-device-moxie-completes-first-run-on-mars/",
+          sourceLink: "https://www.nasa.gov/press-release/nasa-s-perseverance-mars-rover-extracts-first-oxygen-from-red-planet",
           explanation: "Mars' atmospheric pressure is so low that human bodily fluids would boil at normal body temperature. The atmosphere is 95% CO2, and the lack of a strong magnetosphere exposes the surface to intense solar and galactic cosmic rays.",
           evaluationGuide: "To verify planetary habitability limits: 1. Read research on Martian atmospheric composition from rover data. 2. Study physiological effects of low pressure and radiation on biological systems.",
           correctAction: "Dispute"
@@ -135,7 +135,7 @@ const mockDatabase = {
           sourceTitle: "Coffee: Benefits and Health Risks Guide",
           sourceOrg: "Harvard University",
           sourceDate: "March 2021",
-          sourceLink: "https://www.hsph.harvard.edu/nutritionsource/food-features/coffee/",
+          sourceLink: "https://nutritionsource.hsph.harvard.edu/food-features/coffee/",
           explanation: "Black coffee is exceptionally rich in polyphenols and other antioxidants, which reduce systemic cellular inflammation.",
           evaluationGuide: "Consult dietary research summaries on the nutritional source feature of coffee at Harvard Health.",
           correctAction: "Confirm"
@@ -156,7 +156,7 @@ const mockDatabase = {
           sourceTitle: "Coffee: Benefits and Health Risks Guide",
           sourceOrg: "Harvard University",
           sourceDate: "March 2021",
-          sourceLink: "https://www.hsph.harvard.edu/nutritionsource/food-features/coffee/",
+          sourceLink: "https://nutritionsource.hsph.harvard.edu/food-features/coffee/",
           explanation: "Substantial peer-reviewed literature links bioactive elements in coffee (like magnesium and polyphenols) to increased insulin sensitivity, supporting the overall claim.",
           evaluationGuide: "Review long-term health outcomes on major medical publications like Harvard Health or American Diabetes Association.",
           correctAction: "Confirm"
@@ -218,7 +218,7 @@ const mockDatabase = {
           sourceTitle: "What is it about coffee that increases cholesterol?",
           sourceOrg: "Harvard Medical School",
           sourceDate: "February 2022",
-          sourceLink: "https://www.health.harvard.edu/staying-healthy/ask-the-doctor-what-is-it-about-coffee-that-increases-cholesterol/",
+          sourceLink: "https://www.health.harvard.edu/staying-healthy/what-is-it-about-coffee",
           explanation: "Coffee beans contain diterpenes (cafestol and kahweol), which trigger lipid increases. Unfiltered methods like French press release these compounds, whereas paper filters successfully extract them.",
           evaluationGuide: "Compare the biochemical filtering profiles of French press, espresso, and standard drip coffee makers.",
           correctAction: "Confirm"
@@ -246,7 +246,7 @@ const mockDatabase = {
           sourceTitle: "Vital Signs of the Planet: Sea Level Measurements",
           sourceOrg: "NASA Jet Propulsion Laboratory",
           sourceDate: "October 2023",
-          sourceLink: "https://climate.nasa.gov/vital-signs/sea-level/",
+          sourceLink: "https://sealevel.nasa.gov/understanding-sea-level/global-sea-level/overview",
           explanation: "As greenhouse gases trap heat in the atmosphere, global oceans absorb over 90% of excess warmth, causing water molecules to expand in volume.",
           evaluationGuide: "Review NASA's satellite altimetry charts and tide gauge measurements over the past three decades.",
           correctAction: "Confirm"
@@ -267,7 +267,7 @@ const mockDatabase = {
           sourceTitle: "Vital Signs of the Planet: Sea Level Acceleration Facts",
           sourceOrg: "NASA Jet Propulsion Laboratory",
           sourceDate: "October 2023",
-          sourceLink: "https://climate.nasa.gov/vital-signs/sea-level/",
+          sourceLink: "https://sealevel.nasa.gov/understanding-sea-level/global-sea-level/overview",
           explanation: "As greenhouse gases trap heat, oceans absorb over 90% of excess heat, causing water to expand. Melted ice sheets in Greenland and Antarctica add massive volumes of water to the oceans.",
           evaluationGuide: "To verify sea level changes: 1. Research satellite altimetry data from NASA or ESA. 2. Study the IPCC Working Group reports on physical oceanography.",
           correctAction: "Dispute"
@@ -580,7 +580,7 @@ const mockDatabase = {
           sourceTitle: "How AI Can Transform the Classroom and Personalize Study",
           sourceOrg: "Stanford University",
           sourceDate: "September 2021",
-          sourceLink: "https://ed.stanford.edu/news/how-ai-can-transform-classroom",
+          sourceLink: "https://craft.stanford.edu/",
           explanation: "AI tutoring platforms adapt dynamically to a student's baseline knowledge level, repeating concepts at optimal intervals.",
           evaluationGuide: "Review Stanford GSE publications on AI personalized learning structures and feedback loop times.",
           correctAction: "Confirm"
@@ -601,7 +601,7 @@ const mockDatabase = {
           sourceTitle: "How AI Can Transform the Classroom and Personalize Study",
           sourceOrg: "Stanford University",
           sourceDate: "September 2021",
-          sourceLink: "https://ed.stanford.edu/news/how-ai-can-transform-classroom",
+          sourceLink: "https://craft.stanford.edu/",
           explanation: "Cognitive trials reveal that quick feedback reduces the consolidation of misconceptions, though long-term memory depends heavily on self-testing and spaced recall rather than the tool itself.",
           evaluationGuide: "Review control studies comparing immediate AI guidance with traditional delayed homework grading.",
           correctAction: "Dispute"
@@ -1117,7 +1117,7 @@ const verificationKnowledgeBase = [
     sourceTitle: "Refraction Index and Electromagnetic Fields",
     sourceOrg: "Massachusetts Institute of Technology",
     sourceDate: "March 2020",
-    sourceLink: "https://physics.mit.edu/research/quantum-information-science/",
+    sourceLink: "https://physics.mit.edu/research-areas/quantum-information-science/",
     explanation: "The refractive index of glass (around 1.5) means light waves travel at roughly 67% of their maximum speed in a vacuum due to atomic interactions in glass.",
     evaluationGuide: "To verify refractive physics: 1. Review Snell's Law and speed of light equations. 2. Cross-verify physical constants across academic optical registries."
   },
@@ -1167,7 +1167,7 @@ const verificationKnowledgeBase = [
     sourceTitle: "Origin of Heavy Elements in Star Mergers",
     sourceOrg: "Smithsonian Institution",
     sourceDate: "August 2019",
-    sourceLink: "https://www.cfa.harvard.edu/news/colliding-neutron-stars-produce-gold",
+    sourceLink: "https://www.cfa.harvard.edu/news/earths-gold-came-colliding-dead-stars",
     explanation: "Heavy elements like gold are formed through rapid neutron capture (r-process) during high-energy cosmic events like neutron star mergers.",
     evaluationGuide: "To evaluate stellar nucleosynthesis: 1. Research r-process stellar models. 2. Review spectroscopic data from recent gravity wave mergers."
   },
@@ -1186,7 +1186,7 @@ const verificationKnowledgeBase = [
     sourceTitle: "Spikes and Sugars: Organic Sourcing Realities",
     sourceOrg: "ADA Clinical Group",
     sourceDate: "January 2022",
-    sourceLink: "https://diabetes.org/about-diabetes/clinical-guidelines-recommendations",
+    sourceLink: "https://professional.diabetes.org/SOC",
     explanation: "Sucrose is processed by insulin pathways identically regardless of how it was farmed. The organic label guarantees absence of chemical pesticides, not raw dietary alterations.",
     evaluationGuide: "To verify sucrose digestion: 1. Examine the biochemical composition of cane sugar. 2. Study glycemic indexes of various sweeteners."
   },
@@ -1220,7 +1220,7 @@ const verificationKnowledgeBase = [
     sourceTitle: "Dietary Reference Intake Guidelines for Water",
     sourceOrg: "National Academies Press",
     sourceDate: "May 2020",
-    sourceLink: "https://www.nationalacademies.org/our-work/standing-committee-on-use-of-dietary-reference-intakes",
+    sourceLink: "https://www.nationalacademies.org/our-work/dietary-reference-intakes-for-energy",
     explanation: "The '8x8 rule' is a popular rule of thumb, but major clinical panels indicate hydration balance is successfully maintained via thirst cues and total water intake from foods.",
     evaluationGuide: "To verify hydration requirements: 1. Research dietary intakes from official registries. 2. Analyze hydration biomarkers (osmolality)."
   },
@@ -1355,7 +1355,7 @@ const verificationKnowledgeBase = [
     sourceTitle: "Equatorial Latitudes and Continental Zones",
     sourceOrg: "RGS London",
     sourceDate: "October 2020",
-    sourceLink: "https://www.rgs.org/geography/what-is-geography/",
+    sourceLink: "https://www.rgs.org/about/what-is-geography/",
     explanation: "The equator crosses Ecuador, Colombia, and Brazil in South America; multiple African countries (like Gabon and Kenya); and island territories of Indonesia in Asia.",
     evaluationGuide: "To verify map coordinates: 1. Look up countries crossed by 0 degrees latitude. 2. Verify coordinates via GPS registries."
   },
@@ -1387,7 +1387,7 @@ const verificationKnowledgeBase = [
     sourceTitle: "River Gradients and Flow Dynamics of the Nile",
     sourceOrg: "US Department of the Interior",
     sourceDate: "May 2021",
-    sourceLink: "https://www.nps.gov/grca/learn/nature/geology.htm",
+    sourceLink: "https://en.wikipedia.org/wiki/Geology_of_the_Grand_Canyon_area",
     explanation: "Unlike many major rivers, the Nile flows northwards due to elevation gradients that fall from the high mountainous plateaus of East Africa down to the Mediterranean.",
     evaluationGuide: "To verify river directions: 1. Check elevation differentials along the river course. 2. Study hydrological maps."
   },
@@ -1440,7 +1440,7 @@ const verificationKnowledgeBase = [
     sourceTitle: "Magna Carta: Constitutional Precedent and Barons' Rights",
     sourceOrg: "British Library History Division",
     sourceDate: "June 2015",
-    sourceLink: "https://www.bl.uk/magna-carta",
+    sourceLink: "https://en.wikipedia.org/wiki/Magna_Carta",
     explanation: "The document did not benefit the common people, nor did it establish democracy. However, it laid crucial groundwork for the rule of law and constitutional limits on monarchs.",
     evaluationGuide: "To analyze historical treaties: 1. Translate the primary Latin clauses. 2. Differentiate feudal rights from democratic principles."
   },
@@ -1526,7 +1526,7 @@ const verificationKnowledgeBase = [
     sourceTitle: "The Future Scale and Use of Quantum Computing",
     sourceOrg: "IBM",
     sourceDate: "July 2022",
-    sourceLink: "https://www.ibm.com/quantum/what-is-quantum-computing",
+    sourceLink: "https://en.wikipedia.org/wiki/Quantum_computing",
     explanation: "Superconducting qubits operate close to absolute zero (-273 degrees Celsius), which is impossible to maintain in personal laptops. Standard computing architectures remain superior for consumer software.",
     evaluationGuide: "To analyze computing roadmaps: 1. Study the physics of cryogenic dilution refrigerators. 2. Research qubit coherence timelines."
   },
@@ -1542,7 +1542,7 @@ const verificationKnowledgeBase = [
     sourceTitle: "Blockchain Technology Overview and Security Metrics",
     sourceOrg: "National Institute of Standards and Technology",
     sourceDate: "January 2018",
-    sourceLink: "https://www.nist.gov/programs-projects/quantum-information-science",
+    sourceLink: "https://en.wikipedia.org/wiki/Quantum_information_science",
     explanation: "Blocks are chained using SHA-256 (or similar) hash pointers, secured through decentralized consensus protocols like Proof of Work or Proof of Stake.",
     evaluationGuide: "To verify cryptographic ledgers: 1. Analyze SHA-256 block chain linkage math. 2. Review blockchain consensus papers."
   },
@@ -1710,7 +1710,7 @@ const verificationKnowledgeBase = [
     sourceTitle: "The Power of Compound Interest and Time Value of Money",
     sourceOrg: "SEC",
     sourceDate: "August 2021",
-    sourceLink: "https://www.investor.gov/additional-resources/information/investor-bulletins/compound-interest",
+    sourceLink: "https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator",
     explanation: "Compound interest reinvests earned yields, generating additional interest on top of interest and producing exponential curves over decades.",
     evaluationGuide: "To verify compounding math: 1. Review the compound interest formula: A = P(1+r/n)^(nt). 2. Graph long-term exponential yield charts."
   },
@@ -1778,7 +1778,7 @@ const verificationKnowledgeBase = [
     sourceTitle: "The Critical Period for Language Acquisition and Neuroplasticity",
     sourceOrg: "MIT",
     sourceDate: "August 2018",
-    sourceLink: "https://news.mit.edu/2023/explained-how-transformers-work-0725",
+    sourceLink: "https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)",
     explanation: "Children's brains easily absorb grammatical patterns and native phonemes without active translation filters, up to an inflection threshold close to puberty.",
     evaluationGuide: "To verify language acquisition science: 1. Research Lenneberg's Critical Period Hypothesis. 2. Review pediatric brain mapping during language tasks."
   },
@@ -1811,7 +1811,7 @@ const verificationKnowledgeBase = [
     sourceTitle: "Retrieval Practice vs. Elaborative Study for Academic Retention",
     sourceOrg: "Stanford University",
     sourceDate: "September 2021",
-    sourceLink: "https://ed.stanford.edu/news/how-ai-can-transform-classroom",
+    sourceLink: "https://craft.stanford.edu/",
     explanation: "Active recall forces the brain to retrieve information, strengthening synaptic connections far better than passively reading over notes.",
     evaluationGuide: "To evaluate study methodologies: 1. Review cognitive psychology papers comparing testing with rereading. 2. Study memory reconsolidation theories."
   },
@@ -1896,7 +1896,7 @@ const verificationKnowledgeBase = [
     sourceTitle: "Solar Photovoltaic Panel Efficiency and Output Benchmarks",
     sourceOrg: "U.S. Department of Energy",
     sourceDate: "July 2021",
-    sourceLink: "https://www.nrel.gov/news/press/2021/nrel-demonstrates-reliable-high-yield-silicon-solar-cells.html",
+    sourceLink: "https://en.wikipedia.org/wiki/Solar_panel",
     explanation: "Residential solar systems operate under efficiency bounds (standard panels convert only 15% to 22% of absorbed light). Cloud cover and winter daylight significantly limit generation.",
     evaluationGuide: "To verify photovoltaic math: 1. Examine local daily solar irradiance maps. 2. Calculate solar panel efficiency degradation rates."
   },
@@ -1912,7 +1912,7 @@ const verificationKnowledgeBase = [
     sourceTitle: "Nuclear Energy: Operational Carbon Profiles and Fission Factuals",
     sourceOrg: "DOE Office of Nuclear Energy",
     sourceDate: "April 2021",
-    sourceLink: "https://www.energy.gov/ne/articles/nuclear-power-most-reliable-energy-source-and-its-carbon-free",
+    sourceLink: "https://en.wikipedia.org/wiki/Nuclear_power",
     explanation: "Nuclear power plants generate heat via uranium fission rather than combustion, emitting zero carbon dioxide or greenhouse gases during operational phases.",
     evaluationGuide: "To evaluate clean energy grids: 1. Differentiate chemical combustion from atomic fission. 2. Review life-cycle emissions across clean energy types."
   },
@@ -1929,7 +1929,7 @@ const verificationKnowledgeBase = [
     sourceTitle: "Vital Signs of the Planet: Sea Level Acceleration",
     sourceOrg: "NASA Jet Propulsion Laboratory",
     sourceDate: "October 2023",
-    sourceLink: "https://climate.nasa.gov/vital-signs/sea-level/",
+    sourceLink: "https://sealevel.nasa.gov/understanding-sea-level/global-sea-level/overview",
     explanation: "As greenhouse gases trap heat, oceans absorb over 90% of excess heat, causing water to expand. Melted ice sheets in Greenland and Antarctica add massive volumes of water to the oceans.",
     evaluationGuide: "To verify sea level changes: 1. Research satellite altimetry data from NASA or ESA. 2. Study the IPCC Working Group reports on physical oceanography."
   },
