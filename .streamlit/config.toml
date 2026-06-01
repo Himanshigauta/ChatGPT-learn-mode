@@ -1,0 +1,12 @@
+[server]
+port = 8501
+enableCORS = false
+enableXsrfProtection = false
+maxUploadSize = 200
+
+[theme]
+primaryColor = "#10b981"
+backgroundColor = "#0d0d0d"
+secondaryBackgroundColor = "#171717"
+textColor = "#ececec"
+font = "sans serif"
