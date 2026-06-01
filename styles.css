@@ -47,6 +47,7 @@ body {
   display: flex;
   height: 100vh;
   width: 100vw;
+  overflow: hidden; /* Prevent page-level outer scroll and lock viewport */
 }
 
 /* --- Left Sidebar --- */
@@ -1738,7 +1739,7 @@ body {
   line-height: 1.45;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 768px) {
   .red-flags-grid {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -1793,7 +1794,7 @@ body {
   top: -2px;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 768px) {
   .evaluation-checklists-container {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -2326,6 +2327,10 @@ body {
   flex-direction: column;
   gap: 32px;
   padding: 0 24px 48px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .dashboard-section {
@@ -3401,6 +3406,13 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
+  }
+
+  .step-progress-wrapper {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    width: 100% !important;
   }
   
   .step-options-grid {
