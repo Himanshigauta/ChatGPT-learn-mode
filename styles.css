@@ -3061,9 +3061,9 @@ body {
 @media (max-width: 768px) {
   .app-container {
     flex-direction: column;
-    height: auto !important;
-    min-height: 100vh;
-    overflow: visible !important; /* Allow natural page scrolling */
+    height: 100vh !important;
+    height: 100dvh !important;
+    overflow: hidden !important;
   }
 
   /* Header hamburger display */
@@ -3115,38 +3115,57 @@ body {
     gap: 4px !important;
   }
 
-  /* General pages scroll naturally */
+  /* General pages container with dynamic SPA viewport heights */
   .main-content {
-    height: auto !important;
-    min-height: calc(100vh - 56px);
-    overflow: visible !important;
+    height: calc(100% - 56px) !important;
+    overflow: hidden !important;
+  }
+
+  .view-wrapper {
+    height: 100% !important;
+    overflow: hidden !important;
   }
 
   .tab-content {
-    height: auto !important;
-    overflow: visible !important;
+    height: 100% !important;
+    overflow: hidden !important;
   }
 
-  /* ONLY Chat view maintains fixed height viewport to anchor input capsule */
+  .tab-content#dashboard-view,
+  .tab-content#learn-view {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ONLY Chat view maintains fixed height viewport to anchor input capsule via flexbox */
   .tab-content#chat-view.active {
     display: flex !important;
-    height: calc(100vh - 56px) !important;
+    height: 100% !important;
     overflow: hidden !important;
-    position: relative;
+  }
+
+  #chat-view .chat-home-wrapper {
+    flex-grow: 1;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
   }
 
   #chat-view .chat-thread {
     overflow-y: auto !important;
     flex-grow: 1;
-    padding-bottom: 90px; /* Spacing for the floating input capsule */
+    padding-bottom: 20px !important;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
   }
 
   #chat-view .chat-input-area {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(180deg, transparent 0%, var(--bg-primary) 30%);
+    position: static !important;
+    flex-shrink: 0 !important;
+    width: 100% !important;
+    background: var(--bg-primary) !important;
+    padding: 12px 12px 20px !important;
+    box-sizing: border-box !important;
     z-index: 10;
   }
 
@@ -3458,6 +3477,59 @@ body {
   .input-container {
     padding: 8px 10px !important;
     border-radius: 16px !important;
+  }
+
+  /* Learn Hub mobile tweaks */
+  .learn-hub-wrapper {
+    width: 100% !important;
+    padding: 0 12px 24px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .learn-tabs {
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    gap: 8px !important;
+    padding: 6px !important;
+    width: 100% !important;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    border-radius: 8px !important;
+  }
+
+  .learn-tabs::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+
+  .learn-tab-btn {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    padding: 8px 16px !important;
+  }
+
+  .learn-module-content {
+    padding: 16px !important;
+  }
+
+  .signal-expl-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    padding: 14px 16px !important;
+  }
+
+  .signal-expl-row .expl-pill {
+    width: auto !important;
+    align-self: flex-start !important;
+    padding: 4px 10px !important;
+  }
+
+  .source-info-card, .evidence-info-card, .cross-verification-card {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    white-space: normal !important;
   }
 }
 
